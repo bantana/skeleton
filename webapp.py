@@ -17,7 +17,7 @@ import tornado.ioloop
 import tornado.web
 import tornado.httpclient
 from tornado.options import define, parse_config_file, parse_command_line, options
-from pprint import pformat
+import tornado_tools
 
 
 class Home(tornado.web.RequestHandler):
@@ -25,26 +25,10 @@ class Home(tornado.web.RequestHandler):
         self.render("site_home.html")
 
 
-class Status(tornado.web.RequestHandler):
-    def get(self, format):
-        reply = {"version": __version__, "overall": True, "info": list(), "warnings": list(), "errors": list()}
-
-        reply["info"].append({"tornado": tornado.version})
-
-        reply["warnings"].append("Webapp status tests are not implemented, yet")
-
-        if format == "json":
-            self.set_header("Content-Type", "application/json")
-            self.write(json.dumps(reply))
-        else:
-            self.set_header("Content-Type", "text/plain")
-            self.write(pformat(reply))
-
-
 if __name__ == "__main__":
     urls = [
         ("/", Home),
-        (r"/status\.(json|txt)", Status)
+        tornado_tools.handlers.AppStatusUrl
     ]
 
     define("debug", type=bool, default=False)

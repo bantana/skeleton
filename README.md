@@ -13,6 +13,14 @@ Functionality provided at the moment:
 - webapp status page
 - simple homepage
 
+Dependecies
+-----------
+
+- Tornado 2.0+
+- [Tornado tools](http://pypi.python.org/pypi/tornado_tools) 0.2.5+
+
+Tested on the Python 2.7.1
+
 Usage
 -----
 
@@ -25,6 +33,10 @@ Create and modify webapp.conf:
 
     cp etc/sample-webapp.conf etc/webapp.conf
     nano etc/webapp.conf
+
+Install tornado_tools:
+
+    pip install tornado_tools
 
 Run web application daemon:
 
