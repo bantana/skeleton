@@ -3,23 +3,20 @@ Tornado webapp skeleton
 
 This is a webapp skeleton based on the [Tornado](https://github.com/facebook/tornado) web server and [html5boilerplate](http://html5boilerplate.com/) framework.
 
-General goal of this package is to provide web application skeleton which can be modified to satisfy concrete needs.
+General goal of this package is to provide web application skeleton which can be modified to simplify starting new dvelopment.
 
-Functionality provided at the moment:
+At the moment this skeleton provides:
 
-- production/development mode
-- UID/GID switching in production mode
-- logging with log rotation
-- webapp status page
-- simple homepage
+- logging with log rotation (from tornado)
+- production/development mode logging
+- sample homepage
 
 Dependecies
 -----------
 
 - Tornado 2.0+
-- [Tornado tools](http://pypi.python.org/pypi/tornado_tools) 0.2.5+
 
-Tested on the Python 2.7.1
+Tested with the Python 2.6.5 & 2.7.1
 
 Usage
 -----
@@ -34,10 +31,6 @@ Create and modify webapp.conf:
     cp etc/sample-webapp.conf etc/webapp.conf
     nano etc/webapp.conf
 
-Install tornado_tools:
-
-    pip install tornado_tools
-
 Run web application daemon:
 
     python webapp.py etc/webapp.conf
@@ -47,9 +40,18 @@ Your skeleton is a working webapp now! =)
 License
 -------
 
-I'm currently searching for the proper license. Please, come back later to get informed about license type.
+Skeleton is free software package: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-For sure, it will be an existing free open-source license.
+Skeleton is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+To receive a copy of the GNU General Public License
+see [GNU GPL](http://www.gnu.org/licenses/) website.
 
 Contact info
 ------------
